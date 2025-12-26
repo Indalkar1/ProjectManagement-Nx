@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AppContext } from '../context/ProjectContextProvider';
 
 function Dummy1() {
+  const { toast } = useContext(AppContext);
+  console.log('Toast', toast);
   return <div>Dummy1 Dummy1</div>;
 }
 
