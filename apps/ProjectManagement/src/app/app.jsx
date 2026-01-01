@@ -1,6 +1,5 @@
 import { protectedRoutes, publicRoutes } from './routes';
 import { Routes, Route, Navigate } from 'react-router-dom';
-
 const ProtectedLayout = ({ component }) => {
   // Add your authentication logic here
   // localStorage
@@ -28,7 +27,7 @@ export function App() {
           />
         ))}
 
-        <Route path="*" element={<Navigate to="/dummy1" replace />} />
+        <Route path="*" element={<Navigate to="/login" replace />} />
       </Routes>
     </div>
   );

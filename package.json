@@ -5,10 +5,12 @@
   "scripts": {},
   "private": true,
   "dependencies": {
+    "@tailwindcss/vite": "^4.1.18",
     "express": "^4.21.2",
     "react": "19.0.0",
     "react-dom": "19.0.0",
-    "react-router-dom": "6.29.0"
+    "react-router-dom": "6.29.0",
+    "tailwindcss": "^4.1.18"
   },
   "devDependencies": {
     "@babel/core": "^7.14.5",
