@@ -27,7 +27,7 @@ export function App() {
           />
         ))}
 
-        <Route path="*" element={<Navigate to="/dummy1" replace />} />
+        <Route path="*" element={<Navigate to="/login" replace />} />
       </Routes>
     </div>
   );
