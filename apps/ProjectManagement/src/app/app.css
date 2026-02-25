@@ -1,0 +1,13 @@
+/* Your styles goes here. */
+body {
+  margin: 0;
+  font-family: 'roboto', sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.profile-initials-logo {
+  border-radius: 60%;
+  background-color: #1f668b;
+  color: #fff;
+  font-weight: 500;
+}

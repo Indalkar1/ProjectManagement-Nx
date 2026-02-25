@@ -1,5 +1,7 @@
 import { protectedRoutes, publicRoutes } from './routes';
 import { Routes, Route, Navigate } from 'react-router-dom';
+import Navbar from './commmon/Navbar';
+
 const ProtectedLayout = ({ component }) => {
   // Add your authentication logic here
   // localStorage
@@ -14,6 +16,7 @@ const ProtectedLayout = ({ component }) => {
 export function App() {
   return (
     <div>
+      <Navbar />
       <Routes>
         {publicRoutes.map((route, index) => (
           <Route key={index} path={route.path} element={route.component} />
