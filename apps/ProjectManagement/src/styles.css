@@ -1,2 +1,46 @@
 /* You can add global styles to this file, and also import other style files */
 @import "tailwindcss";
+
+/* recaptcha */
+.auth-recaptcha-wrapper {
+  margin-top: 20px;
+  margin-bottom: 24px;
+}
+
+.auth-recaptcha-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 10px;
+  background: #f4f4f4;
+  border: 1px solid #e0e0e0;
+  min-height: 80px;
+}
+
+.auth-recaptcha-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.auth-recaptcha-label {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 22px;
+  letter-spacing: 0.28px;
+  color: #292a2b;
+  cursor: pointer;
+  user-select: none;
+  margin: 0;
+}
+
+.auth-recaptcha-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 49px;
+  height: 49px;
+  flex-shrink: 0;
+}
