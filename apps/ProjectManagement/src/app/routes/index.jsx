@@ -1,8 +1,9 @@
 import Dummy1 from '../Pages/Dummy1';
 import SignIn from '../pages/SignIn';
+import Dashboard from '../Pages/Dashboard/Dashboard';
 
 const protectedRoutes = [
-  { path: '/dummy2', component: <Dummy1 />, isShowLayout: true },
+  { path: '/dashboard', component: <Dashboard />, isShowLayout: true },
 ];
 
 const publicRoutes = [

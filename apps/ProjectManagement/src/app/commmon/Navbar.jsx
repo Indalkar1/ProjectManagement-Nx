@@ -5,7 +5,7 @@ import { mdiBellOutline } from '@mdi/js';
 
 function Navbar() {
   return (
-    <div className="w-full px-4 py-2 h-[60px] bg-white shadow-md items-center">
+    <div className="w-full px-4 py-2 h-[70px] bg-white shadow-md items-center">
       <div className="flex justify-between h-full items-center">
         <div className="flex gap-2 h-full items-center">
           <img src={FlowDeskLogo} alt="FlowDesk Logo" className="h-[35px]" />

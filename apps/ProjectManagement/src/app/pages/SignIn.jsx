@@ -105,7 +105,7 @@ function SignIn() {
                     </div>
                     <div className="mt-5 flex justify-center text-center">
                       <button
-                        className="bg-[#256Eb5] text-white w-100 p-3 "
+                        className="bg-[#0077B6] text-white w-100 p-3"
                         type="submit"
                       >
                         Login

@@ -2,12 +2,15 @@ import { protectedRoutes, publicRoutes } from './routes';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './commmon/Navbar';
 
-const ProtectedLayout = ({ component }) => {
+const ProtectedLayout = ({ route }) => {
   // Add your authentication logic here
   // localStorage
   const isAuthenticated = true;
   return isAuthenticated ? (
-    <div>{component}</div>
+    <div>
+     {route?.isShowLayout && <Navbar />}
+      {route.component}
+    </div>
   ) : (
     <Navigate to="/dummy1" replace />
   );
@@ -16,7 +19,6 @@ const ProtectedLayout = ({ component }) => {
 export function App() {
   return (
     <div>
-      <Navbar />
       <Routes>
         {publicRoutes.map((route, index) => (
           <Route key={index} path={route.path} element={route.component} />
@@ -26,7 +28,7 @@ export function App() {
           <Route
             key={index}
             path={route.path}
-            element={<ProtectedLayout component={route.component} />}
+            element={<ProtectedLayout route={route} />}
           />
         ))}
 
