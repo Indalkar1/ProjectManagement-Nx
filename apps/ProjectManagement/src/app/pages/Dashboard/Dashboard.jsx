@@ -7,12 +7,12 @@ import './dashboard.css';
 function Dashboard() {
   return (
     <div className="w-full h-full p-4 gap-4 flex flex-col">
-      <div className="flex gap-4">
-        <div>
+      <div className="flex gap-4 w-full">
+        <div style={{flex: 6}}>
           <AllTaskStatusGraph />
         </div>
-        <div>
-          <DashboardProjectList />
+        <div style={{flex: 4}}>
+          <RecentlyVisitedTask />
         </div>
       </div>
       <div className="flex gap-4">
@@ -20,7 +20,7 @@ function Dashboard() {
           <DashboardTaskList />
         </div>
         <div>
-          <RecentlyVisitedTask />
+          <DashboardProjectList />
         </div>
       </div>
     </div>
