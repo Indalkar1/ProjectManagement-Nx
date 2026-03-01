@@ -1,13 +1,464 @@
 /* Your styles goes here. */
+@import "tailwindcss";
+
+/* Light Mode (Default) */
+:root {
+  /* Primary Colors */
+  --color-primary: #0077B6;
+  --color-primary-hover: #005F8F;
+  --color-primary-light: #E6F4FA;
+
+  /* Neutrals */
+  --color-bg: #F8FAFC;
+  --color-card-surface: #FFFFFF;
+  --color-sidebar: #0F172A;
+  --color-border: #E5E7EB;
+  --color-text-primary: #111827;
+  --color-text-secondary: #6B7280;
+
+  /* Status Colors */
+  --color-success: #16A34A;
+  --color-warning: #F59E0B;
+  --color-error: #DC2626;
+  --color-info: #0284C7;
+
+  /* Shadows - Light Mode */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 6px 18px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 12px 28px rgba(0, 0, 0, 0.12);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+
+  /* Dark Mode */
+  --color-dark-bg: #0B1220;
+  --color-dark-surface: #111827;
+  --color-dark-surface-2: #1F2937;
+  /* elevated card */
+  --color-dark-surface-hover: #243043;
+  --color-dark-border: rgba(255, 255, 255, 0.08);
+  --color-dark-primary: #38BDF8;
+  --color-dark-primary-hover: #0EA5E9;
+  --color-dark-text-primary: #F3F4F6;
+  --color-dark-text-secondary: #9CA3AF;
+
+  /* Shadows - Dark Mode */
+  --shadow-sm-dark: 0 4px 12px rgba(0, 0, 0, 0.45);
+  --shadow-md-dark: 0 12px 32px rgba(0, 0, 0, 0.55);
+  --shadow-lg-dark: 0 20px 45px rgba(0, 0, 0, 0.65);
+  --shadow-xl-dark: 0 20px 25px -5px rgba(0, 0, 0, 0.7);
+
+  --bg: var(--color-bg);
+  --surface: var(--color-card-surface);
+  --sidebar: var(--color-sidebar);
+  --border: var(--color-border);
+  --text-primary: var(--color-text-primary);
+  --text-secondary: var(--color-text-secondary);
+  --primary: var(--color-primary);
+  --primary-hover: var(--color-primary-hover);
+  --primary-light: var(--color-primary-light);
+  --success: var(--color-success);
+  --warning: var(--color-warning);
+  --error: var(--color-error);
+  --info: var(--color-info);
+}
+
+/* Dark Mode */
+.dark {
+  --bg: var(--color-dark-bg);
+  --surface: var(--color-dark-surface);
+  --surface-elevated: var(--color-dark-surface-2);
+  --border: var(--color-dark-border);
+  --text-primary: var(--color-dark-text-primary);
+  --text-secondary: var(--color-dark-text-secondary);
+  --primary: var(--color-dark-primary);
+  --primary-hover: var(--color-dark-primary-hover);
+  --shadow-sm: var(--shadow-sm-dark);
+  --shadow-md: var(--shadow-md-dark);
+  --shadow-lg: var(--shadow-lg-dark);
+  --shadow-xl: var(--shadow-xl-dark);
+}
+
 body {
   margin: 0;
-  font-family: 'roboto', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--bg);
+  color: var(--text-primary);
+  transition: background-color 0.25s ease, color 0.25s ease;
+  -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Utility Classes */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+}
+
+.card-elevated {
+  background: var(--surface-elevated);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border);
+}
+
+.bg-app {
+  background-color: var(--bg);
+}
+
+
+.bg-app-surface {
+  background-color: var(--surface);
+}
+
+.bg-surface-elevated {
+  background: var(--surface-elevated);
+}
+
+.bg-app-sidebar {
+  background-color: var(--sidebar);
+}
+
+.text-app-primary {
+  color: var(--text-primary);
+}
+
+.text-app-secondary {
+  color: var(--text-secondary);
+}
+
+.border-app {
+  border-color: var(--border);
+}
+
+.shadow-app-sm {
+  box-shadow: var(--shadow-sm);
+}
+
+.shadow-app-md {
+  box-shadow: var(--shadow-md);
+}
+
+.shadow-app-lg {
+  box-shadow: var(--shadow-lg);
+}
+
+.shadow-app-xl {
+  box-shadow: var(--shadow-xl);
+}
+
+/* Typography - Headings */
+.heading-1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--text-primary);
+}
+
+.heading-2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--text-primary);
+}
+
+.heading-3 {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--text-primary);
+}
+
+/* Typography - Subheadings */
+.subheading-lg {
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--text-primary);
+}
+
+.subheading-md {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--text-primary);
+}
+
+.subheading-sm {
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--text-primary);
+}
+
+/* Typography - Body Text */
+.body-lg {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--text-primary);
+}
+
+.body-md {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--text-primary);
+}
+
+.body-sm {
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--text-primary);
+}
+
+.body-xs {
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--text-primary);
+}
+
+/* Typography - Secondary Text */
+.text-secondary-lg {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.text-secondary-md {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.text-secondary-sm {
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+.text-secondary-xs {
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+
+/* Button Base Styles */
+button {
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+/* Primary Button */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.5rem;
+  padding: 0 1rem;
+  background-color: var(--primary);
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
+  border-radius: 6px;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  box-shadow: var(--shadow-md);
+  /* transform: translateY(-2px); */
+}
+
+.btn-primary:disabled {
+  background: #9CA3AF;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Secondary Button */
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.5rem;
+  padding: 0 1rem;
+  background-color: transparent;
+  color: var(--primary);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
+  border: 2px solid var(--primary);
+  border-radius: 6px;
+  box-shadow: none;
+}
+
+.btn-secondary:hover {
+  background-color: var(--primary-light);
+  border-color: var(--primary-hover);
+  color: var(--primary-hover);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-secondary:disabled {
+  background-color: transparent;
+  border-color: #9CA3AF;
+  color: #9CA3AF;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Tertiary Button */
+.btn-tertiary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.5rem;
+  padding: 0 1rem;
+  background-color: transparent;
+  color: var(--primary);
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  border: none;
+  box-shadow: none;
+}
+
+.btn-tertiary:hover {
+  background-color: var(--primary-light);
+  color: var(--primary-hover);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-tertiary:disabled {
+  background-color: transparent;
+  color: #9CA3AF;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Icon Button */
+.btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.5rem;
+  width: 2.5rem;
+  padding: 0;
+  background-color: transparent;
+  color: var(--primary);
+  border: none;
+  border-radius: 6px;
+  box-shadow: none;
+}
+
+.btn-icon:hover {
+  background-color: var(--primary-light);
+  color: var(--primary-hover);
+}
+
+.btn-icon:active {
+  background-color: var(--primary);
+  color: white;
+}
+
+/* Success Button */
+.btn-success {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.5rem;
+  padding: 0 1rem;
+  background-color: var(--success);
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
+  border-radius: 6px;
+  border: none;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-success:hover {
+  background-color: #15803d;
+  box-shadow: var(--shadow-md);
+  /* transform: translateY(-2px); */
+}
+
+.btn-success:disabled {
+  background-color: #9CA3AF;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Error Button */
+.btn-error {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.5rem;
+  padding: 0 1rem;
+  background-color: var(--error);
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
+  border-radius: 6px;
+  border: none;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-error:hover {
+  background-color: #b91c1c;
+  box-shadow: var(--shadow-md);
+  /* transform: translateY(-2px); */
+}
+
+.btn-error:disabled {
+  background-color: #9CA3AF;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Warning Button */
+.btn-warning {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.5rem;
+  padding: 0 1rem;
+  background-color: var(--warning);
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
+  border-radius: 6px;
+  border: none;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-warning:hover {
+  background-color: #d97706;
+  box-shadow: var(--shadow-md);
+  /* transform: translateY(-2px); */
+}
+
+.btn-warning:disabled {
+  background-color: #9CA3AF;
+  cursor: not-allowed;
+  opacity: 0.6;
 }
 
 .profile-initials-logo {
   border-radius: 60%;
-  background-color: #1f668b;
+  background-color: var(--primary);
   color: #fff;
   font-weight: 500;
 }

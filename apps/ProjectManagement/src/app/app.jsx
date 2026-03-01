@@ -1,14 +1,16 @@
 import { protectedRoutes, publicRoutes } from './routes';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './commmon/Navbar';
+import { useProjectContext } from './context/ProjectContextProvider';
 
 const ProtectedLayout = ({ route }) => {
   // Add your authentication logic here
   // localStorage
   const isAuthenticated = true;
+  const { theme, setTheme } = useProjectContext();
   return isAuthenticated ? (
-    <div>
-     {route?.isShowLayout && <Navbar />}
+    <div >
+      {route?.isShowLayout && <Navbar theme={theme} setTheme={setTheme}/>}
       {route.component}
     </div>
   ) : (
@@ -17,6 +19,8 @@ const ProtectedLayout = ({ route }) => {
 };
 
 export function App() {
+  const { theme } = useProjectContext();
+
   return (
     <div>
       <Routes>
