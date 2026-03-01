@@ -10,7 +10,7 @@ const AllTaskStatusGraph = () => {
   const options = {
     chart: {
       type: "bar",
-      height: 160, // 👈 important
+      height: 160, 
     },
     title: {
       text: "",
