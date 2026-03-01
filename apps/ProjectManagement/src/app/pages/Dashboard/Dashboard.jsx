@@ -6,7 +6,7 @@ import './dashboard.css';
 
 function Dashboard() {
   return (
-    <div className="w-full h-full p-4 gap-4 flex flex-col">
+    <div className="w-full h-full p-4 gap-4 pb-0 flex flex-col">
       <div className="flex gap-4 w-full">
         <div style={{ flex: 6 }}>
           <AllTaskStatusGraph />
