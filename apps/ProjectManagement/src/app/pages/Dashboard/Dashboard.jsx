@@ -6,23 +6,27 @@ import './dashboard.css';
 
 function Dashboard() {
   return (
-    <div className="w-full h-full p-4 gap-4 flex flex-col">
-      <div className="flex gap-4 w-full">
-        <div style={{ flex: 6 }}>
+    <div className="w-full h-full p-4 gap-4 flex flex-col overflow-hidden">
+
+      {/* Row 1: Graph + Recently Visited */}
+      <div className="flex gap-4 w-full min-w-0">
+        <div className="min-w-0" style={{ flex: 6 }}>
           <AllTaskStatusGraph />
         </div>
-        <div style={{ flex: 4 }}>
+        <div className="min-w-0" style={{ flex: 4 }}>
           <RecentlyVisitedTask />
         </div>
       </div>
-      <div className="flex gap-4" >
-        <div className='w-1/2'>
+      {/* Row 2: Project List + Task List */}
+      <div className="flex gap-4 w-full min-w-0 overflow-hidden">
+        <div className="w-1/2 min-w-0 overflow-hidden">
           <DashboardProjectList />
         </div>
-        <div className='w-1/2'>
+        <div className="w-1/2 min-w-0 overflow-hidden">
           <DashboardTaskList />
         </div>
       </div>
+
     </div>
   );
 }
