@@ -8,19 +8,19 @@ function Dashboard() {
   return (
     <div className="w-full h-full p-4 gap-4 flex flex-col">
       <div className="flex gap-4 w-full">
-        <div style={{flex: 6}}>
+        <div style={{ flex: 6 }}>
           <AllTaskStatusGraph />
         </div>
-        <div style={{flex: 4}}>
+        <div style={{ flex: 4 }}>
           <RecentlyVisitedTask />
         </div>
       </div>
-      <div className="flex gap-4">
-        <div>
-          <DashboardTaskList />
-        </div>
-        <div>
+      <div className="flex gap-4" >
+        <div className='w-1/2'>
           <DashboardProjectList />
+        </div>
+        <div className='w-1/2'>
+          <DashboardTaskList />
         </div>
       </div>
     </div>
