@@ -1,13 +1,64 @@
-import React from 'react'
+import React from "react";
+import Highcharts from "highcharts";
+import HighchartsReact from "highcharts-react-official";
 
 const AllTaskStatusGraph = () => {
-  return (
-    <div>
-      <div className='h-40 bg-gray-200 rounded-lg flex items-center justify-center' >
-        <span className='text-gray-500'>All Task Status Graph Placeholder</span>
-      </div>
-    </div>
-  )
-}
+  const completed = 25;
+  const pending = 10;
+  const todo = 15;
 
-export default AllTaskStatusGraph
+  const options = {
+    chart: {
+      type: "bar",
+      height: 160, // 👈 important
+    },
+    title: {
+      text: "",
+    },
+    xAxis: {
+      categories: ["Tasks"],
+    },
+    yAxis: {
+      min: 0,
+      title: {
+        text: null,
+      },
+    },
+    plotOptions: {
+      series: {
+        stacking: "normal",
+        dataLabels: {
+          enabled: true,
+        },
+      },
+    },
+    series: [
+      {
+        name: "Completed",
+        data: [completed],
+        color: "#4CAF50",
+      },
+      {
+        name: "Pending",
+        data: [pending],
+        color: "#FFC107",
+      },
+      {
+        name: "To Do",
+        data: [todo],
+        color: "#2196F3",
+      },
+    ],
+    credits: {
+      enabled: false,
+    },
+  };
+
+  return (
+    <div className="rounded-lg p-2 border border-black">
+      <HighchartsReact highcharts={Highcharts} options={options} />
+    </div>
+  );
+};
+
+export default AllTaskStatusGraph;
