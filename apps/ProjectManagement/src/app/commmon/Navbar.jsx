@@ -16,7 +16,7 @@ function Navbar() {
   };
 
   return (
-    <div className="w-full px-4 py-2 h-[70px] bg-app-surface text-app-primary shadow-md items-center border-b border-app transition-colors duration-300">
+    <div className="w-full px-4 py-2 h-[70px] bg-app-surface text-app-primary shadow-md items-center border-b border-app transition-colors duration-300 sticky top-0 z-50">
       <div className="flex justify-between h-full items-center">
         <div className="flex gap-2 h-full items-center">
           <img src={FlowDeskLogo} alt="FlowDesk Logo" className="h-[35px]" />

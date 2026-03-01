@@ -75,6 +75,10 @@
   --shadow-md: var(--shadow-md-dark);
   --shadow-lg: var(--shadow-lg-dark);
   --shadow-xl: var(--shadow-xl-dark);
+  --success: #22C55E;
+  --warning: #FBBF24;
+  --error: #EF4444;
+  --info: #38BDF8;
 }
 
 body {
@@ -464,6 +468,53 @@ button {
   background-color: #9CA3AF;
   cursor: not-allowed;
   opacity: 0.6;
+}
+
+.badge {
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 9999px;
+}
+
+.badge-success {
+  background-color: var(--success);
+  color: white;
+}
+
+.badge-warning {
+  background-color: var(--warning);
+  color: black;
+}
+
+.badge-error {
+  background-color: var(--error);
+  color: white;
+}
+
+.badge-info {
+  background-color: var(--info);
+  color: white;
+}
+
+/* For Webkit Browsers (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--surface);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--border);
+  border-radius: 9999px;
+  transition: background-color 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--primary);
 }
 
 .profile-initials-logo {
